@@ -1,0 +1,23 @@
+# Percona Packages for Valkey documentation
+
+Welcome to Percons Packages for Valkey documentation!
+
+This is the set of tutorials to help you get started with Valkey. You will find instructions of how to install Valkey from Percona packages and how to migrate from Redis server to Valkey.
+
+<div data-grid markdown><div data-banner markdown>
+
+## :material-progress-download: Installation guide { .title }
+
+Get started quickly by installing Valkey from Percona packages.
+
+[Install Valkey :material-arrow-right:](installation.md){ .md-button }
+
+</div><div data-banner markdown>
+
+## :octicons-arrow-switch-16: Migration guide { .title }
+
+Not happy with Redis and wish to migrate to Valkey? Check out our migration guide.
+
+[Migrate to Valkey :material-arrow-right:](migration.md){ .md-button }
+</div>
+</div>

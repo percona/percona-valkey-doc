@@ -1,0 +1,10 @@
+# Ignore
+*~
+*.pyc
+build
+source/ext/__pycache__
+
+# Local folder
+site
+.DS_Store
+
