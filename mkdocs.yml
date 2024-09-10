@@ -15,8 +15,8 @@ use_directory_urls: false
 # Material theme features
 theme:
   name: material
-  logo: _images/postgresql-mark.svg
-  favicon: _images/postgresql-fav.svg
+  logo: _images/percona-mark.svg
+  favicon: _images/pecrona-fav.svg
   custom_dir: _resource/overrides/
   font:
     text: Roboto  
