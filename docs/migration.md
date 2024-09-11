@@ -29,7 +29,7 @@ The following table provides migration options depending on the Redis version yo
 To migrate a standalone Redis server to Valkey, you have the following options:
 
 * [Physical migration](#physical-migration) by copying the most recent on-disk snapshot from the Redis server to Valkey and starting Valkey server with it
-* [Setting up replication](#repication) between Redis and Valkey 
+* [Setting up replication](#replication) between Redis and Valkey 
 * [Migrating specific keys](#migrate-specific-keys) 
 
 The example migration steps are provided for Redis 7.2.5 and Valkey version 7.2.6. 
