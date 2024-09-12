@@ -3,7 +3,7 @@
 This is a migration guide from Redis Community Edition to Valkey. 
 You will learn how to migrate a standalone Redis server instance and a Redis Cluster. 
 
-This guide provides migration steps for Redis server and Valkey deployed in Docker; however, they should also apply for on-premises deployments. 
+This guide provides migration steps for Redis server and Valkey deployed in Docker; however, the principles are the same for any deployment method. 
 Refer to [install Valkey](installation.md) for installation options.
 
 ## Why to migrate to Valkey?

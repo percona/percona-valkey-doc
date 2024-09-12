@@ -6,8 +6,8 @@ To support Valkey’s development and adoption, Percona provides packages for al
 
 The packages are available for both x86_64 and ARM64 architectures for the following operating systems:
 
-* Oracle Linux 8
-* Oracle Linux 9 
+* Oracle Linux 8, Rocky Linux 8 and Alma Linux 8 
+* Oracle Linux 9, Rocky Linux 9 and Alma Linux 9 
 * Ubuntu 20.04 
 * Ubuntu 22.04 
 * Ubuntu 24.04 
@@ -39,7 +39,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
            $ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
            ```    
 
-           After you install this package, you have the access to Percona repositories. You can check the repository setup in the `/etc/apt/sources.list.d/percona-release.list` file.    
+           After you install this package, you have the access to Percona repositories. You can check the repository setup in the `/etc/apt/sources.list.d/percona-prel-release.list` file.    
     
     2.  Enable the repository:    
 

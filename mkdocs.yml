@@ -150,6 +150,6 @@ plugins:
 
 nav:
   - 'Home': 'index.md'
-  - 'Installation': 'installation.md'
-  - 'Migration': 'migration.md'
+  - 'Install from Percona repository': 'installation.md'
+  - 'Migration guide': 'migration.md'
 
