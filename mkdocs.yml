@@ -16,7 +16,7 @@ use_directory_urls: false
 theme:
   name: material
   logo: _images/percona-mark.svg
-  favicon: _images/pecrona-fav.svg
+  favicon: _images/percona-fav.svg
   custom_dir: _resource/overrides/
   font:
     text: Roboto  
