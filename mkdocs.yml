@@ -151,5 +151,5 @@ plugins:
 nav:
   - 'Home': 'index.md'
   - 'Install from Percona repository': 'installation.md'
-  - 'Migration guide': 'migration.md'
+  - 'Redis to Valkey migration guide': 'migration.md'
 
