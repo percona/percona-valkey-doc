@@ -8,4 +8,4 @@ For how to contribute to documentation, read the [Contributing guide](https://gi
 
 ## License
 
-Percona Packages for Valkey documentation is licensed under the [3-Clause BSD License](https://opensource.org/license/bsd-3-clause).
+Percona Packages for Valkey documentation is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
