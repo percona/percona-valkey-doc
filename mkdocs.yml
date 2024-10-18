@@ -166,4 +166,9 @@ nav:
   - 'Home': 'index.md'
   - 'Install from Percona repository': 'installation.md'
   - 'Redis to Valkey migration guide': 'migration.md'
+  - Release notes: 
+    - "Release notes index": release-notes/release-notes.md
+    - release-notes/8.0.md
+    - release-notes/7.2.md
+    
 
