@@ -19,7 +19,7 @@ theme:
   favicon: _images/percona-fav.svg
   custom_dir: _resource/overrides/
   font:
-    text: Roboto  
+    text: Roboto
     code: Roboto Mono
   icon:
     edit: material/file-edit-outline
@@ -50,11 +50,11 @@ theme:
   features:
     - search.highlight
     - navigation.top
-    - navigation.tracking 
+    - navigation.tracking
     - content.tabs.link
     - content.action.edit
     - content.action.view
-    - content.code.copy  
+    - content.code.copy
 
 extra_css:
   - https://unicons.iconscout.com/release/v3.0.3/css/line.css
@@ -83,10 +83,10 @@ markdown_extensions:
   pymdownx.details: {}
   pymdownx.mark: {}
   pymdownx.smartsymbols: {}
-  pymdownx.tabbed: 
+  pymdownx.tabbed:
       {alternate_style: true}
   pymdownx.tilde: {}
-  pymdownx.superfences: 
+  pymdownx.superfences:
     custom_fences:
       - name: mermaid
         class: mermaid
@@ -108,9 +108,9 @@ markdown_extensions:
 
 plugins:
   section-index: {}
-  search: 
+  search:
     separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  git-revision-date-localized: 
+  git-revision-date-localized:
     enable_creation_date: true
     enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
   meta-descriptions:
@@ -141,9 +141,9 @@ plugins:
 #      javascript_dir: js
 #      canonical_version: null#
 
-#Google Analytics configuration 
-extra: 
-  analytics: 
+#Google Analytics configuration
+extra:
+  analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
     feedback:
@@ -157,8 +157,8 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page could be improved
           data: 0
-          note: >- 
-            Thank you for your feedback! Help us improve by using our 
+          note: >-
+            Thank you for your feedback! Help us improve by using our
             <a href="https://docs.google.com/forms/d/1bkWACehjqlwA0AKf-qTJcXvYbOSYgze8iTPXjntqmNo/edit" target="_blank" rel="noopener">
             feedback form</a>.
 
@@ -166,17 +166,15 @@ nav:
   - 'Home': 'index.md'
   - 'Install from Percona repository': 'installation.md'
   - 'Redis to Valkey migration guide': 'migration.md'
-  - Release notes: 
+  - Release notes:
     - "Release notes index": release-notes/release-notes.md
     - 8.0.x:
       - "8.0.0 GA": release-notes/8.0.md
       - "8.0.0 RC2": release-notes/8.0-rc2.md
       - "8.0.0 RC1": release-notes/8.0-rc1.md
     - 7.2.x:
+      - "7.2.7": release-notes/7.2.7.md
       - "7.2.6 GA": release-notes/7.2.6.md
       - "7.2.5": release-notes/7.2.5.md
       - "7.2.4 RC1": release-notes/7.2.4.md
     - release-notes/acknowledgements.md
-
-    
-
