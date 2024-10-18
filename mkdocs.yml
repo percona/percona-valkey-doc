@@ -168,12 +168,14 @@ nav:
   - 'Redis to Valkey migration guide': 'migration.md'
   - Release notes: 
     - "Release notes index": release-notes/release-notes.md
-    - release-notes/8.0.md
-    - release-notes/8.0-rc2.md
-    - release-notes/8.0-rc1.md
-    - release-notes/7.2.6.md
-    - release-notes/7.2.5.md
-    - release-notes/7.2.4.md
+    - 8.0.x:
+      - "8.0.0 GA": release-notes/8.0.md
+      - "8.0.0 RC2": release-notes/8.0-rc2.md
+      - "8.0.0 RC1": release-notes/8.0-rc1.md
+    - 7.2.x:
+      - "7.2.6 GA": release-notes/7.2.6.md
+      - "7.2.5": release-notes/7.2.5.md
+      - "7.2.4 RC1": release-notes/7.2.4.md
     - release-notes/acknowledgements.md
 
     
