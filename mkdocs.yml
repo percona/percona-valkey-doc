@@ -176,6 +176,7 @@ nav:
     - 7.2.x:
       - "7.2.7": release-notes/7.2.7.md
       - "7.2.6 GA": release-notes/7.2.6.md
-      - "7.2.5": release-notes/7.2.5.md
+      - "7.2.5 GA": release-notes/7.2.5.md
+      - "7.2.5 RC1": release-notes/7.2.5-rc1.md
       - "7.2.4 RC1": release-notes/7.2.4.md
     - release-notes/acknowledgements.md
