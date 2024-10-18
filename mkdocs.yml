@@ -169,6 +169,12 @@ nav:
   - Release notes: 
     - "Release notes index": release-notes/release-notes.md
     - release-notes/8.0.md
-    - release-notes/7.2.md
+    - release-notes/8.0-rc2.md
+    - release-notes/8.0-rc1.md
+    - release-notes/7.2.6.md
+    - release-notes/7.2.5.md
+    - release-notes/7.2.4.md
+    - release-notes/acknowledgements.md
+
     
 
