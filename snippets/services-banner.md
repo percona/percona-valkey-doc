@@ -7,7 +7,7 @@ If you need assistance, visit the community forum for comprehensive and free dat
 
 <div class="actions" markdown>
 
-[:material-forum-outline: Community Forum](https://forums.percona.com/c/general-questions/6) [:percona-logo: Get a Percona Expert](https://learn.percona.com/percona-support-for-valkey)
+[:material-forum-outline: Community Forum](https://forums.percona.com/c/valkey/83) [:percona-logo: Get a Percona Expert](https://learn.percona.com/percona-support-for-valkey)
 
 </div>
 </div>
