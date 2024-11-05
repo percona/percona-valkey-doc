@@ -20,4 +20,13 @@ Unhappy with the Redis licensing change and wish to switch to to the open source
 
 [Migrate to Valkey :material-arrow-right:](migration.md){ .md-button }
 </div>
+
+<div data-banner markdown>
+
+## :loudspeaker: What's new { .title }
+
+Learn about the new releases and changes in Valkey.
+
+[Release notes :material-arrow-right:](release-notes/release-notes.md){ .md-button }
+</div>
 </div>
