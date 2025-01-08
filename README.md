@@ -4,7 +4,7 @@ This documentation covers the instructions how to install Valkey from Percona pa
 
 ## Contributing
 
-For how to contribute to documentation, read the [Contributing guide](https://github.com/percona/percona-valkey-doc/main/CONTRIBUTING.md).
+For how to contribute to documentation, read the [Contributing guide](CONTRIBUTING.md).
 
 ## License
 
