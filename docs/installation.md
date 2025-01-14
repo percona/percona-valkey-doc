@@ -16,8 +16,8 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
 
 ## Preconditions
 
-1. To install the software, you will need to subscribe to Percona repositores. To do this, use the [percona-release repository management tool](https://docs.percona.com/percona-software-repositories/index.html) that automatically enables the necessary repository. The software and all required dependencies are available in this repository, saving you from resolving dependency conflicts during the installation process.
-2. Both Valkey and Redis use the same libs that conflict with each other when you try to install Valkey on the same host with Redis. Therefore, either install Valkey on another host or remove Redis first before Valkey installation.
+1. To install the software, you will need to subscribe to Percona repositories. To do this, use the [percona-release repository management tool](https://docs.percona.com/percona-software-repositories/index.html) that automatically enables the necessary repository. The software and all required dependencies are available in this repository, saving you from resolving dependency conflicts during the installation process.
+2. Both Valkey and Redis use the same libraries that conflict with each other when you try to install Valkey on the same host with Redis. Therefore, either install Valkey on another host or remove Redis first before you install Valkey.
 
 ## Install Valkey
 
@@ -39,12 +39,12 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
            $ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
            ```    
 
-           After you install this package, you have the access to Percona repositories. You can check the repository setup in the `/etc/apt/sources.list.d/percona-prel-release.list` file.    
+           After you install this package, you have the access to Percona repositories.    
     
     2.  Enable the repository:    
 
          ```{.bash data-prompt="$"}
-         $ sudo percona-release enable valkey testing
+         $ sudo percona-release enable valkey experimental
          ```    
 
     3. Remember to update the local cache:    
@@ -70,7 +70,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
     2. Enable the repository
 
         ```{.bash data-prompt="$"}
-        $ sudo percona-release enable valkey testing
+        $ sudo percona-release enable valkey experimental
         ```
     
     3. Install Valkey
