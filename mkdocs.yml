@@ -169,6 +169,8 @@ nav:
   - 'Redis to Valkey migration guide': 'migration.md'
   - Release notes:
     - "Release notes index": release-notes/release-notes.md
+    - 8.1.x:
+      - "8.1.0 RC1": release-notes/8.1.0-rc1.md
     - 8.0.x:
       - "8.0.2": release-notes/8.0.2.md
       - "8.0.1": release-notes/8.0.1.md
