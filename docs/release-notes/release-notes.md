@@ -6,6 +6,7 @@ Find the list of changes introduced in the Percona packages for Valkey below.
 
 ## Version 8.1.x
 
+* [8.1.0 RC2](8.1.0-rc2.md)
 * [8.1.0 RC1](8.1.0-rc1.md)
 
 ## Version 8.0.x
