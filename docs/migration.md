@@ -1,20 +1,20 @@
 # Migration from Redis to Valkey
 
-This is a migration guide from Redis Community Edition to Valkey. 
-You will learn how to migrate a standalone Redis server instance and a Redis Cluster. 
+This is a migration guide from Redis Community Edition to Valkey.
+You will learn how to migrate a standalone Redis server instance and a Redis Cluster.
 
-This guide provides migration steps for Redis server and Valkey deployed in Docker; however, the principles are the same for any deployment method. 
+This guide provides migration steps for Redis server and Valkey deployed in Docker; however, the principles are the same for any deployment method.
 Refer to [install Valkey](installation.md) for installation options.
 
 ## Why to migrate to Valkey?
 
 * Valkey is the vendor-neutral and open-source software
 * Enhanced performance with multi-threading and dual-channel replication
-* Improved memory efficiency by using one dictionary per slot in cluster mode and embedding keys in dictionaries. 
+* Improved memory efficiency by using one dictionary per slot in cluster mode and embedding keys in dictionaries.
 
 ### Migration compatibility matrix
 
-You can migrate Redis server to Valkey. 
+You can migrate Redis server to Valkey.
 The following table provides migration options depending on the Redis version you run:
 
 | Redis | Valkey |
@@ -29,23 +29,23 @@ The following table provides migration options depending on the Redis version yo
 To migrate a standalone Redis server to Valkey, you have the following options:
 
 * [Physical migration](#physical-migration) by copying the most recent on-disk snapshot from the Redis server to Valkey and starting Valkey server with it
-* [Setting up replication](#replication) between Redis and Valkey 
-* [Migrating specific keys](#migrate-specific-keys) 
+* [Setting up replication](#replication) between Redis and Valkey
+* [Migrating specific keys](#migrate-specific-keys)
 
-The example migration steps are provided for Redis 7.2.5 and Valkey version 7.2.6. 
+The example migration steps are provided for Redis 7.2.5 and Valkey version 7.2.6.
 
 ### Physical migration
 
 This is the easiest and fastest migration method. You make a fresh snapshot of your Redis instance and copy it over to Valkey. Valkey reads the data from the snapshot on startup and restores its contents into memory. The tradeoffs for this method are:
 
-* The downtime to shutdown Redis and wait for Valkey to load the data. 
+* The downtime to shutdown Redis and wait for Valkey to load the data.
 * Potential risk of data loss on instances with heavy writes. To prevent it, you must disconnect all active connections before the migration start.
 
 The migration steps are the following:
 
 1. Disconnect all active connections to the Redis instance.
 
-2. Make a backup of your Redis instance. 
+2. Make a backup of your Redis instance.
 
     a. Connect to Redis and check the number of keys:
         ```
@@ -54,7 +54,7 @@ The migration steps are the following:
         # Keyspace
         db0:keys=6286,expires=0,avg_ttl=0
         ```
-    
+
     b. Check the configuration for the directory (`dir`) where Redis stores its database files and the name of the database file (`dbfilename`):
        ```
        redis> CONFIG GET dir dbfilename
@@ -63,7 +63,7 @@ The migration steps are the following:
        3) "dbfilename"
        4) "dump.rdb"
        ```
-    
+
     c. Check the timestamp of the last save operation
        ```
        redis> LASTSAVE
@@ -78,10 +78,10 @@ The migration steps are the following:
 
     e. Check if the backup succeeded by running `LASTSAVE` periodically. The backup ended when the timestamp changes.
 
-    f. Exit the `redis-cli` by pressing `Ctrl-D`. 
+    f. Exit the `redis-cli` by pressing `Ctrl-D`.
 
-2. Stop the Redis server. 
-3. Copy the RDB file to the Valkey's data directory and start Valkey. 
+2. Stop the Redis server.
+3. Copy the RDB file to the Valkey's data directory and start Valkey.
 
     >NOTE: If you enabled AOF in your Valkey configuration, disable it on the first start. Otherwise, the copied RDB file will not be imported into Valkey.
 
@@ -112,7 +112,7 @@ The migration steps are the following:
 
 To minimize the downtime during migration, you can use replication. Both Redis and Valkey allow replaying data on another server to handle the workload.
 
-In this scenario we will configure Valkey to be the replica of Redis. For illustrative purposes, both Redis and Valkey are running in separate Docker containers connected to the same network. 
+In this scenario we will configure Valkey to be the replica of Redis. For illustrative purposes, both Redis and Valkey are running in separate Docker containers connected to the same network.
 
 1. Retrieve the IP address of Redis container. Replace the `myredis` placeholder with the name of your container.
 
@@ -129,7 +129,7 @@ In this scenario we will configure Valkey to be the replica of Redis. For illust
     valkey> REPLICAOF 172.17.0.2 6379
     ```
 
-3. Check the replication status in Valkey. 
+3. Check the replication status in Valkey.
 
     ```
     valkey> INFO REPLICATION
@@ -143,7 +143,7 @@ In this scenario we will configure Valkey to be the replica of Redis. For illust
     ....
     ```
 
-4. Now that the two are in sync, check that your applications connect to Valkey and shut down your Redis instance. 
+4. Now that the two are in sync, check that your applications connect to Valkey and shut down your Redis instance.
 
    You can shut down Redis in one of the following ways:
 
@@ -156,7 +156,7 @@ In this scenario we will configure Valkey to be the replica of Redis. For illust
    * If Redis was started directly in the foreground (using redis-server), you can simply stop it by pressing `Ctrl-C` in the terminal where it is running.
 
 5. Halt Valkey replication:
- 
+
     ```
     valkey> REPLICAOF NO ONE
     OK
@@ -166,15 +166,15 @@ In this scenario we will configure Valkey to be the replica of Redis. For illust
 
 ### Migrate specific keys
 
-Both physical migration and replication migrate the entire keyspace over to Valkey. 
+Both physical migration and replication migrate the entire keyspace over to Valkey.
 
-There may be cases when you need to migrate only specific set of critical keys. 
+There may be cases when you need to migrate only specific set of critical keys.
 To do that, use the `MIGRATE` command.
 
-For the following steps, we assume that both Redis and Valkey Docker containers are connected to the same network and can communicate with each other. 
+For the following steps, we assume that both Redis and Valkey Docker containers are connected to the same network and can communicate with each other.
 For simplicity, we are running both instances without authentication.
 
-1. Connect to Redis and set the keys you wish to migrate over. Replace `myredis` with the name of your container. 
+1. Connect to Redis and set the keys you wish to migrate over. Replace `myredis` with the name of your container.
    For example, let's use the keys `message` and  `mydata`.
 
     ```
@@ -195,7 +195,7 @@ For simplicity, we are running both instances without authentication.
 3. From the Redis server, run the `MIGRATE` command and specify the following information:
 
      * The IP address and post of the Valkey instance
-     * Authentication password. For no authentication, set the empty value 
+     * Authentication password. For no authentication, set the empty value
      * The database number. To get the number, run the `INFO keyspace` command
      * Timeout for the operation, in milliseconds
      * The `COPY` option ensures that the key is not removed from the source instance after the migration.
@@ -211,7 +211,7 @@ For simplicity, we are running both instances without authentication.
 4. Exit `redis-cli` by pressing `Ctrl-D`
 
 4. Connect to Valkey and check the migrated keys. replace `myvalkey` with the name of your Valkey container.
-   
+
     ```
     $ docker exec -it myvalkey valkey-cli
     valkey> GET message
@@ -263,7 +263,7 @@ For this scenario, we assume that you have Redis Cluster consisting of 3 primary
 
     Read more about Valkey configuration parameters in [the self documented Valkey.conf for 7.2](https://raw.githubusercontent.com/valkey-io/valkey/7.2/valkey.conf)
 
-3. Start a Valkey instance with your custom configuration file. The following command starts Valkey in Docker: 
+3. Start a Valkey instance with your custom configuration file. The following command starts Valkey in Docker:
 
     ```
     $ docker run  -d -v myvalkey/conf:/usr/local/etc/valkey --name valkey-1 --net mynetwork valkey/valkey valkey-server /usr/local/etc/valkey/valkey.conf
@@ -296,7 +296,7 @@ For this scenario, we assume that you have Redis Cluster consisting of 3 primary
 
     ```
     a98d5bac59672597b8509f24970e413002f896b6 172.22.0.8:6379@16379 slave 58061fb2836bdb2f5a0973e1ccfd74a66166f329 0 1725451086000 3 connected
-    ``` 
+    ```
 
 7. Check that the newly added node is recognized as a replica by running the `INFO REPLICATION` command. The output shows the information about the node's primary.
 
@@ -309,8 +309,8 @@ For this scenario, we assume that you have Redis Cluster consisting of 3 primary
 
 9. Check the cluster state. You should now see the previous replica to be a new primary.
 
-10. Repeat steps 3-9 to add 2 more Valkey nodes and replace the Redis primary nodes. 
-11. Repeat steps 3-7 to add 3 Valkey replica nodes. 
+10. Repeat steps 3-9 to add 2 more Valkey nodes and replace the Redis primary nodes.
+11. Repeat steps 3-7 to add 3 Valkey replica nodes.
 
     To add a replica to a specific primary, do the following:
 
@@ -339,4 +339,3 @@ For this scenario, we assume that you have Redis Cluster consisting of 3 primary
      The first argument is just a random node in the cluster, the second argument is the ID of the node you want to remove.
 
 > NOTE: If not for backward compatibility, the Valkey project no longer uses the words "master" and "slave". Unfortunately in the given commands these words are part of the protocol, so we’ll be able to remove such occurrences only when this API will be naturally deprecated.
-
