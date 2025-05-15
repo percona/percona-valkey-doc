@@ -1,4 +1,4 @@
-# Install Valkey from Percona repositories
+# 1. Install Valkey from Percona repositories
 
 Valkey offers packages for a select number of Linux distributions. Specifically, you can install it from Fedora/EPEL yum repositories and as binary tarballs for both Ubuntu Bionic and Ubuntu Focal. Additionally, it is available as a Docker container.
 

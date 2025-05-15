@@ -163,9 +163,12 @@ extra:
             feedback form</a>.
 
 nav:
-  - 'Home': 'index.md'
+  - 'Home': index.md
   - get-help.md
-  - 'Install from Percona repository': 'installation.md'
+  - Get started: 
+    - Quickstart guide: 'quick-start/index.md'
+    - '1. Install from Percona repository': 'installation.md'
+  - '1. Install from Percona repository': 'installation.md'
   - 'Redis to Valkey migration guide': 'migration.md'
   - Release notes:
     - "Release notes index": release-notes/release-notes.md
