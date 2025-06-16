@@ -6,12 +6,12 @@ To support Valkey’s development and adoption, Percona provides packages for al
 
 The packages are available for both x86_64 and ARM64 architectures for the following operating systems:
 
-* Oracle Linux 8, Rocky Linux 8 and Alma Linux 8 
-* Oracle Linux 9, Rocky Linux 9 and Alma Linux 9 
-* Ubuntu 20.04 
-* Ubuntu 22.04 
-* Ubuntu 24.04 
-* Debian 11 
+* Oracle Linux 8, Rocky Linux 8 and Alma Linux 8
+* Oracle Linux 9, Rocky Linux 9 and Alma Linux 9
+* Ubuntu 20.04
+* Ubuntu 22.04
+* Ubuntu 24.04
+* Debian 11
 * Debian 12
 
 ## Preconditions
