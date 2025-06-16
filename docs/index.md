@@ -16,9 +16,9 @@ Get started quickly by installing Valkey from Percona packages.
 
 ## :octicons-arrow-switch-16: Migration guide { .title }
 
-Unhappy with the Redis licensing change and wish to switch to to the open source alternative Valkey? Check out the migration guide.
+Wish to switch to to the open source alternative Valkey? Check out the migration guide.
 
-[Migrate to Valkey :material-arrow-right:](migration.md){ .md-button }
+[Migrate to Valkey :material-arrow-right:](migration-guide/migration.md){ .md-button }
 </div>
 
 <div data-banner markdown>
