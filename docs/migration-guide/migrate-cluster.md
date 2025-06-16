@@ -1,4 +1,4 @@
-# Migrate a Cluster
+# Migrate a Redis cluster
 
 To migrate a Redis Cluster to Valkey, you have the following options:
 
