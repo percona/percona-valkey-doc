@@ -165,13 +165,10 @@ extra:
 nav:
   - Home: index.md
   - get-help.md
-  - Quickstart guide: 'quick-start/index.md'
-  - Installation: 
-    - From Percona repository: 'installation.md'
-    - Docker image: 'installation-docker.md' 
-    - From source: 'installation-from-source.md'
-  - '1. Install from Percona repository': 'installation.md'
-  - 'Redis to Valkey Migration Guide': 'migration.md'
+  - 'Install from Percona repository': 'installation.md'
+  - 'Migration guide':
+    - "Migration from Redis to Valkey": migration-guide/migration.md
+    - "Migrate a cluster": migration-guide/migrate-cluster.md
   - Release notes:
     - "Release notes index": release-notes/release-notes.md
     - 8.1.x:
