@@ -163,7 +163,7 @@ extra:
             feedback form</a>.
 
 nav:
-  - 'Home': 'index.md'
+  - Home: index.md
   - get-help.md
   - 'Install from Percona repository': 'installation.md'
   - 'Migration guide':
