@@ -1,6 +1,6 @@
 # Percona Packages for Valkey documentation
 
-This documentation covers the instructions how to install Valkey from Percona packages. To learn more about Valkey, read [Valkey documentation](https://valkey.io/docs/)
+This documentation covers the instructions how to install Valkey from Percona packages. To learn more about Valkey, read the official [Valkey documentation](https://valkey.io/docs/).
 
 ## Contributing
 
