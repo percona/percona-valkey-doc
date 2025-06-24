@@ -165,6 +165,11 @@ extra:
 nav:
   - Home: index.md
   - get-help.md
+  - features.md
+  - 'Percona Valkey':
+    - 'What is Percona Valkey?': overview.md
+    - 'Valkey vs Redis': valkey-vs-redis.md
+    - 'Valkey vs Redis Enterprise': valkey-vs-redis-enterprise.md
   - 'Install from Percona repository': 'installation.md'
   - 'Migration guide':
     - "Migration from Redis to Valkey": migration-guide/migration.md
