@@ -6,11 +6,21 @@ Below you can find tutorials to help you to get started with Valkey. Follow step
 
 <div data-grid markdown><div data-banner markdown>
 
+## :material-progress-download: Overview { .title }
+
+Learn more about what Percona Packages for Valkey is and what we offer.
+
+[Overview :material-arrow-right:](overview/overview.md){ .md-button }
+
+</div><div data-banner markdown>
+
+<div data-grid markdown><div data-banner markdown>
+
 ## :material-progress-download: Installation guide { .title }
 
 Get started quickly by installing Valkey from Percona packages.
 
-[Install Valkey :material-arrow-right:](/percona-valkey-doc/docs/get-started/installation.md){ .md-button }
+[Install Valkey :material-arrow-right:](get-started/installation.md){ .md-button }
 
 </div><div data-banner markdown>
 

@@ -163,14 +163,12 @@ extra:
             feedback form</a>.
 
 nav:
-  - Home: index.md
+  - 'Home': index.md
   - get-help.md
-  - features.md
-  - 'Percona Valkey':
-    - 'What is Percona Valkey?': overview.md
-    - 'Valkey vs Redis': valkey-vs-redis.md
-    - 'Valkey vs Redis Enterprise': valkey-vs-redis-enterprise.md
-  - 'Install from Percona repository': 'installation.md'
+  - 'Overview':
+    - 'What is Percona Valkey?': overview/overview.md
+    - 'What Percona offers': overview/offers.md
+  - 'Install from Percona repository': get-started/installation.md
   - 'Migration guide':
     - "Migration from Redis to Valkey": migration-guide/migration.md
     - "Migrate a cluster": migration-guide/migrate-cluster.md

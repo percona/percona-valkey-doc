@@ -1,18 +1,42 @@
-# Quickstart guide
+# QuickStart guide
 
-**Valkey** is an open-source high-performance in-memory data store, using official packages, containers, or by building from source. This guide explains how to install Valkey on supported Linux distributions and containerized environments using Percona-recommended methods.
+## Prerequisites  
 
-Valkey is fully compatible with Redis clients and protocols, making it a drop-in replacement for most Redis-based use cases.
+- Supported Linux (x86_64 or ARM64)  
+- `curl` or `wget`
 
-Valkey supports scenarios such as:
+## Install percona-release
 
-- Caching frequently accessed data
-- Session management
-- Real-time analytics
-- Pub/sub systems and background queueing
+Fetch the percona-release package and install it:
 
-!!! note
-    These instructions are intended for Linux-based systems. For other platforms, consult the [Valkey community documentation](https://valkey.io/docs/).
+```bash
+$ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb`
+$ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+```
+
+Enable and update the repository:
+
+```bash
+$ sudo percona-release enable valkey experimental
+$ sudo apt update
+```
+
+## Install Valkey
+
+```bash
+$ sudo apt install valkey
+```
+
+## Start the server
+
+## Connect to Valkey
+
+In the valkey-cli, pass the following command:
+
+```bash
+$ valkey-cli ping
+PONG
+```
 
 ## 1. Introduction  
 **Audience**  
