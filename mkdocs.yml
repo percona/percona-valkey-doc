@@ -175,6 +175,7 @@ nav:
   - Release notes:
     - "Release notes index": release-notes/release-notes.md
     - 8.1.x:
+      - "8.1.0": release-notes/8.1.0.md
       - "8.1.0 RC2": release-notes/8.1.0-rc2.md
       - "8.1.0 RC1": release-notes/8.1.0-rc1.md
     - 8.0.x:
