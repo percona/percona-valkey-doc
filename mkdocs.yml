@@ -163,16 +163,18 @@ extra:
             feedback form</a>.
 
 nav:
-  - 'Home': index.md
+  - "Home": index.md
   - get-help.md
-  - 'Overview':
-    - 'What is Percona Valkey?': overview/overview.md
-    - 'What Percona offers': overview/offers.md
-  - 'Install from Percona repository': get-started/installation.md
-  - 'Migration guide':
-    - "Migration from Redis to Valkey": migration-guide/migration.md
+  - "Overview":
+    - "What is Percona Valkey?": overview/overview.md
+    - "What does Percona offer?": overview/offers.md
+  - "Get started":
+    - "Quickstart guide": quick-start/index.md
+    - "Install from the Percona repository": get-started/installation.md
+  - "Migration guide":
+    - "Migrate from Redis to Valkey": migration-guide/migration.md
     - "Migrate a cluster": migration-guide/migrate-cluster.md
-  - Release notes:
+  - "Release notes":
     - "Release notes index": release-notes/release-notes.md
     - 8.1.x:
       - "8.1.0": release-notes/8.1.0.md
