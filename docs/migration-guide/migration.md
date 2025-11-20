@@ -6,7 +6,7 @@ You will learn how to migrate a standalone Redis server instance and a Redis Clu
 This guide provides migration steps for Redis server and Valkey deployed in Docker; however, the principles are the same for any deployment method.
 
 !!! note
-    For more information on installation options, see [install Valkey](../installation.md).
+    For more information on installation options, see [install Valkey](../get-started/installation.md).
 
 ## Why to migrate to Valkey?
 

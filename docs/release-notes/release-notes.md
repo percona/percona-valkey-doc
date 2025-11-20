@@ -1,6 +1,6 @@
 # Percona packages for Valkey release notes
 
-Find the list of changes introduced in the Percona packages for Valkey below.
+This page lists all release notes for Percona packages for Valkey, organized by year and version. Use it to track new features, fixes, and updates across major and minor versions.
 
 --8<-- "upgrade-urgency.md"
 
