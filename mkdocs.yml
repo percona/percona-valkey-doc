@@ -3,7 +3,7 @@
 site_name: Percona Packages for Valkey
 site_description: Documentation
 site_author: Percona LLC
-copyright:  <a href="https://www.percona.com/about">Percona LLC</a> and/or its affiliates © 2024 — <a href="#__consent">Cookie Consent</a>
+copyright:  <a href="https://www.percona.com/about">Percona LLC</a> and/or its affiliates © 2025 — <a href="#__consent">Cookie Consent</a>
 
 repo_name: percona/percona-valkey-doc
 
@@ -63,10 +63,12 @@ extra_css:
   - css/design.css
   - css/osano.css
   - css/landing.css
+  - css/rating.css
 
 extra_javascript:
   - js/promptremover.js
-  - js/consent.css
+  - js/consent.js
+  - js/rating.js
 
 markdown_extensions:
   attr_list: {}
@@ -113,6 +115,10 @@ plugins:
   git-revision-date-localized:
     enable_creation_date: true
     enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
+  git-committers:
+    enabled: !ENV [CI, false]
+    repository: percona/percona-valkey-doc
+    branch: "main"
   meta-descriptions:
     export_csv: false
     quiet: false
@@ -146,19 +152,6 @@ extra:
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Want to improve this page? Click  <strong>Edit this page on GitHub</strong> above to submit a pull request.
 
 nav:
   - 'Home': 'index.md'
