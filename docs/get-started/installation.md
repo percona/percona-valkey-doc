@@ -1,10 +1,12 @@
-# Install Valkey from Percona repositories
+# 1. Install Valkey from Percona repositories
 
-Valkey offers packages for a select number of Linux distributions. Specifically, you can install it from Fedora/EPEL yum repositories and as binary tarballs for both Ubuntu Bionic and Ubuntu Focal. Additionally, it is available as a Docker container.
+Valkey offers packages for a select number of Linux distributions. You can install it in the following ways:
 
-To support Valkey’s development and adoption, Percona provides packages for all major active Linux distributions, making it easy for you to install Valkey on your system.
+- From Fedora/EPEL yum repositories
+- As binary tarballs for Ubuntu Bionic and Ubuntu Focal
+- or by using a Docker container
 
-The packages are available for both x86_64 and ARM64 architectures for the following operating systems:
+To support Valkey’s development and adoption, Percona provides packages for **all** major active Linux distributions. The packages are available for the *x86_64* and *ARM64* architectures, for the following operating systems:
 
 * Oracle Linux 8, Rocky Linux 8 and Alma Linux 8
 * Oracle Linux 9, Rocky Linux 9 and Alma Linux 9
@@ -91,16 +93,28 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
         $ sudo systemctl status valkey
         ```
 
+=== "Install from Docker"
+
+    To install Valkey using Docker, pull and run the latest official image:
+
+    ```bash
+    docker pull valkey/valkey
+
+    docker run valkey/valkey
+    ```
+
+    For more advanced options, see the following [Valkey Docker Hub page](https://hub.docker.com/r/valkey/valkey/#how-to-use-this-image). 
+
 ## Connect to Valkey
 
 With Valkey up and running, you can now connect to it using the `valkey-cli` interface. Check if Valkey is correctly running by passing the following command:
 
-```{.bash data-prompt="$"}
-$ valkey-cli ping
-PONG
+```bash
+    $ valkey-cli ping
+    PONG
 ```
 
-You can pass `valkey-cli` without any argument. You should see the following prompt: 
+You can pass `valkey-cli` without any argument. You should see the following prompt:
 
 ```
 127.0.0.1:6379> 
