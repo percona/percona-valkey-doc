@@ -4,6 +4,10 @@ Find the list of changes introduced in the Percona packages for Valkey below.
 
 --8<-- "upgrade-urgency.md"
 
+## Version 9.0.x
+
+* [9.0.0](9.0.0.md)
+
 ## Version 8.1.x
 
 * [8.1.0](8.1.0.md)
