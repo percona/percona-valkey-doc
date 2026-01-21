@@ -4,6 +4,13 @@ Valkey offers packages for a select number of Linux distributions. Specifically,
 
 To support Valkey’s development and adoption, Percona provides packages for all major active Linux distributions, making it easy for you to install Valkey on your system.
 
+!!! warning
+    **Experimental packages - not for production use**
+
+    Percona Valkey packages are currently provided through the **experimental** repository. These packages have **not** completed full QA validation and are **not** recommended for production environments.
+
+    Use them only for development, testing, evaluation, or non-critical workloads.
+
 The packages are available for both x86_64 and ARM64 architectures for the following operating systems:
 
 * Oracle Linux 8, Rocky Linux 8 and Alma Linux 8
