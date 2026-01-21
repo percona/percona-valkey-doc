@@ -162,6 +162,8 @@ nav:
     - "Migrate a cluster": migration-guide/migrate-cluster.md
   - Release notes:
     - "Release notes index": release-notes/release-notes.md
+    - 9.0.x:
+      - "9.0.0": release-notes/9.0.0.md
     - 8.1.x:
       - "8.1.0": release-notes/8.1.0.md
       - "8.1.0 RC2": release-notes/8.1.0-rc2.md
