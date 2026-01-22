@@ -156,6 +156,9 @@ extra:
 nav:
   - 'Home': 'index.md'
   - get-help.md
+  - Quickstart:
+    - Database caching: db-cache.md
+    - queues.md
   - 'Install from Percona repository': 'installation.md'
   - 'Migration guide':
     - "Migration from Redis to Valkey": migration-guide/migration.md
