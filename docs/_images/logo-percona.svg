@@ -1,10 +1,14 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="100" height="100" fill="#0E1A53"/>
-<path d="M70.4539 54.1496C77.3878 49.62 79.6566 40.3807 75.4604 33.1189C73.3579 29.4765 69.9592 26.8679 65.8931 25.7787C62.126 24.768 58.1914 25.1813 54.7283 26.9297L50 18.75L40.1853 35.7378L17.5 75H82.5L70.4539 54.1496ZM64.7813 29.94C67.7368 30.7267 70.1962 32.6232 71.7281 35.264C74.739 40.4695 73.1749 47.072 68.292 50.4067L56.8875 30.6687C59.3444 29.4881 62.1157 29.2306 64.7813 29.94ZM50 27.3714L75.025 70.688H60.3828L42.6757 40.0485L49.9987 27.3726L50 27.3714ZM24.975 70.688L40.184 44.3682L55.3931 70.688H24.975Z" fill="url(#paint0_linear_3023_3169)"/>
-<defs>
-<linearGradient id="paint0_linear_3023_3169" x1="25.3063" y1="70.4637" x2="75.9485" y2="42.6746" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FC3519"/>
-<stop offset="1" stop-color="#F0D136"/>
-</linearGradient>
-</defs>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 9.03 Build 0)  -->
+<svg version="1.0" id="Percona_-_Logomark_-_One_color_white"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
+	 style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g>
+	<path class="st0" d="M108.9,139.5l63.5,110.1h-127L108.9,139.5z M178.8,82.2c10.3-4.9,21.8-6,33-3c12.3,3.3,22.6,11.2,29,22.3
+		c12.6,21.8,6,49.4-14.4,63.3L178.8,82.2z M119.3,121.4l30.6-53l0,0l104.5,181.2h-61.2L119.3,121.4z M108.9,103.4L14.2,267.6h271.5
+		l-50.3-87.2c29-18.9,38.4-57.6,20.9-88c-8.8-15.2-23-26.1-40-30.7c-15.7-4.2-32.2-2.5-46.6,4.8l-19.8-34.2L108.9,103.4z"/>
+</g>
 </svg>

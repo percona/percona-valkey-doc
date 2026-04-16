@@ -64,6 +64,7 @@ extra_css:
   - css/osano.css
   - css/landing.css
   - css/rating.css
+  - css/valkey.css
 
 extra_javascript:
   - js/promptremover.js
