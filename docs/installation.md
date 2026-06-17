@@ -53,7 +53,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
     2.  Enable the repository:    
 
          ```{.bash data-prompt="$"}
-         $ sudo percona-release enable valkey experimental
+         $ sudo percona-release enable valkey-91 release
          ```    
 
     3. Remember to update the local cache:    
@@ -79,13 +79,13 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
     2. Enable the repository
 
         ```{.bash data-prompt="$"}
-        $ sudo percona-release enable valkey experimental
+        $ sudo percona-release enable valkey-91 release
         ```
     
     3. Install Valkey
 
         ```{.bash data-prompt="$"}
-        $ sudo yum install valkey-91
+        $ sudo yum install valkey
         ```
     
     4. Upon installation, Valkey is not started automatically. To start it, run the following command:
