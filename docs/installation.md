@@ -15,11 +15,13 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
 
 * Oracle Linux 8, Rocky Linux 8 and Alma Linux 8
 * Oracle Linux 9, Rocky Linux 9 and Alma Linux 9
-* Ubuntu 20.04
+* Oracle Linux 10, Rocky Linux 10 and Alma Linux 10
 * Ubuntu 22.04
 * Ubuntu 24.04
+* Ubuntu 26.04
 * Debian 11
 * Debian 12
+* Debian 13
 
 ## Preconditions
 
@@ -51,7 +53,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
     2.  Enable the repository:    
 
          ```{.bash data-prompt="$"}
-         $ sudo percona-release enable valkey experimental
+         $ sudo percona-release enable valkey-91 release
          ```    
 
     3. Remember to update the local cache:    
@@ -77,7 +79,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
     2. Enable the repository
 
         ```{.bash data-prompt="$"}
-        $ sudo percona-release enable valkey experimental
+        $ sudo percona-release enable valkey-91 release
         ```
     
     3. Install Valkey
