@@ -15,11 +15,13 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
 
 * Oracle Linux 8, Rocky Linux 8 and Alma Linux 8
 * Oracle Linux 9, Rocky Linux 9 and Alma Linux 9
-* Ubuntu 20.04
+* Oracle Linux 10, Rocky Linux 10 and Alma Linux 10
 * Ubuntu 22.04
 * Ubuntu 24.04
+* Ubuntu 26.04
 * Debian 11
 * Debian 12
+* Debian 13
 
 ## Preconditions
 
@@ -83,7 +85,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
     3. Install Valkey
 
         ```{.bash data-prompt="$"}
-        $ sudo yum install valkey
+        $ sudo yum install valkey-91
         ```
     
     4. Upon installation, Valkey is not started automatically. To start it, run the following command:
