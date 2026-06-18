@@ -8,7 +8,7 @@ This is the set of tutorials to help you get started with Valkey. You will find 
 
 ## :material-progress-download: Installation guide { .title }
 
-Install and evaluate Valkey using Percona experimental packages.
+Install and evaluate Valkey using Percona packages.
 
 [Install Valkey :material-arrow-right:](installation.md){ .md-button }
 
