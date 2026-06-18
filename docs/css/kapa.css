@@ -13,8 +13,8 @@ button#ask-percona-ai {
     border: none;
     border-radius: 0.1rem;
 
-    background: #A83FEF;
-    color: #F3E9FF;
+    background: #7B2FAF;
+    color: #FFFFFF;
 
     box-shadow: var(--md-shadow-z1);
 
@@ -33,13 +33,13 @@ button#ask-percona-ai {
 }
 
 button#ask-percona-ai:hover {
-    background: #B65AF2;
+    background: #8E3BC6;
 }
 
 button#ask-percona-ai:focus-visible {
     outline: none;
     box-shadow:
-        0 0 0 0.1rem rgba(168, 63, 239, 0.35),
+        0 0 0 0.1rem rgba(123, 47, 175, 0.35),
         var(--md-shadow-z2);
 }
 
