@@ -77,7 +77,7 @@
 
         script.setAttribute(
             "data-modal-example-questions",
-            "What is Valkey and how does it differ from Redis?, How do I install Valkey?, How do I connect to and use Valkey?, How do I deploy Valkey in production?"
+            "What is Valkey and how does it differ from Redis?, How do I install Valkey?, How do I connect applications to Valkey?, What are the best practices for deploying Valkey in production?"
         );
 
         script.setAttribute(
