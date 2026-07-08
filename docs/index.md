@@ -10,7 +10,7 @@ This is the set of tutorials to help you get started with Valkey. You will find 
 
 Install and evaluate Valkey using Percona packages.
 
-[Install Valkey :material-arrow-right:](installation.md){ .md-button }
+[Install Valkey :material-arrow-right:](installation/installation.md){ .md-button }
 
 </div><div data-banner markdown>
 
