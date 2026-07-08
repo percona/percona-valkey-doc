@@ -159,7 +159,11 @@ extra:
 nav:
   - 'Home': 'index.md'
   - get-help.md
-  - 'Install from Percona repository': 'installation.md'
+  - 'Install Valkey':
+    - 'Overview': 'installation/installation.md'
+    - 'Install from packages': 'installation/install-package.md'
+    - 'Install from Docker': 'installation/install-docker.md'
+    - 'Connect to Valkey': 'installation/connect.md'
   - 'Migration guide':
     - "Migration from Redis to Valkey": migration-guide/migration.md
     - "Migrate a cluster": migration-guide/migrate-cluster.md

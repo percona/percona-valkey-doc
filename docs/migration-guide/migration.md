@@ -6,7 +6,7 @@ You will learn how to migrate a standalone Redis server instance and a Redis Clu
 This guide provides migration steps for Redis server and Valkey deployed in Docker; however, the principles are the same for any deployment method.
 
 !!! note
-    For more information on installation options, see [install Valkey](../installation.md).
+    For more information on installation options, see [install Valkey](../installation/installation.md).
 
 ## Why to migrate to Valkey?
 
@@ -50,7 +50,8 @@ The migration steps are the following:
 2. Make a backup of your Redis instance.
 
     a. Connect to Redis and check the number of keys:
-        ```
+
+        ```bash
         $ redis-cli -h 127.0.0.1 -p 6379
         redis> INFO KEYSPACE
         # Keyspace
@@ -58,7 +59,8 @@ The migration steps are the following:
         ```
 
     b. Check the configuration for the directory (`dir`) where Redis stores its database files and the name of the database file (`dbfilename`):
-       ```
+
+       ```bash
        redis> CONFIG GET dir dbfilename
        1) "dir"
        2) "/data"
@@ -66,14 +68,16 @@ The migration steps are the following:
        4) "dump.rdb"
        ```
 
-    c. Check the timestamp of the last save operation
-       ```
+    c. Check the timestamp of the last save operation:
+
+       ```bash
        redis> LASTSAVE
        (integer) 1724764878
        ```
 
-    d. Start a backup
-       ```
+    d. Start a backup:
+
+       ```bash
        redis> BGSAVE
        Background saving started
        ```
@@ -82,33 +86,33 @@ The migration steps are the following:
 
     f. Exit the `redis-cli` by pressing `Ctrl-D`.
 
-2. Stop the Redis server.
-3. Copy the RDB file to the Valkey's data directory and start Valkey.
+3. Stop the Redis server.
+4. Copy the RDB file to the Valkey's data directory and start Valkey.
 
     >NOTE: If you enabled AOF in your Valkey configuration, disable it on the first start. Otherwise, the copied RDB file will not be imported into Valkey.
 
     For Docker deployments, copy the RDB file to your host and start a Valkey container mounting this file to the container's data directory. Replace the `<container-name>` and `<path/on/host>` placeholders with your values.
 
-    ```
+    ```bash
     $ docker cp <container-name>:/data/dump.rdb <path/on/host>
     ```
 
     Start Valkey:
 
-    ```
+    ```bash
     $ docker run -d --name somevalkey -v <path/on/host>:/data valkey/valkey
     ```
 
-4. Check the keyspace on Valkey to verify that the data is migrated:
+5. Check the keyspace on Valkey to verify that the data is migrated:
 
-    ```
+    ```bash
     $ docker exec -it somevalkey valkey-cli
     valkey> INFO KEYSPACE
     # Keyspace
     db0:keys=6286,expires=0,avg_ttl=0
     ```
 
-5. To exit `valkey-cli`, press `Ctrl-D`.
+6. To exit `valkey-cli`, press `Ctrl-D`.
 
 ### Replication
 
@@ -116,7 +120,7 @@ To minimize the downtime during migration, you can use replication. Both Redis a
 
 In this scenario we will configure Valkey to be the replica of Redis. For illustrative purposes, both Redis and Valkey are running in separate Docker containers connected to the same network.
 
-1. Retrieve the IP address of Redis container. Replace the `myredis` placeholder with the name of your container.
+1. Retrieve the IP address of Redis container. Replace the `myredis` placeholder with the name of your container:
 
     {% raw %}
     ```
@@ -126,14 +130,14 @@ In this scenario we will configure Valkey to be the replica of Redis. For illust
 
 2. Connect to Valkey and configure replication. Replace the IP address and port with the ones of your Redis container, retrieved at the previous step:
 
-    ```
+    ```bash
     $ docker exec -it myvalkey valkey-cli
     valkey> REPLICAOF 172.17.0.2 6379
     ```
 
-3. Check the replication status in Valkey.
+3. Check the replication status in Valkey:
 
-    ```
+    ```bash
     valkey> INFO REPLICATION
     # Replication
     role:slave
@@ -165,7 +169,7 @@ In this scenario we will configure Valkey to be the replica of Redis. For illust
     ```
 
 !!! note
-    If not for backward compatibility, the Valkey project no longer uses the words "master" and "slave". Unfortunately in this command these words are part of the protocol, so we’ll be able to remove such occurrences only when this API will be naturally deprecated.
+    If not for backward compatibility, the Valkey project no longer uses the words "master" and "slave". Unfortunately in this command these words are part of the protocol, these occurences will be removed only when the API will be naturally deprecated.
 
 ### Migrate specific keys
 
@@ -178,17 +182,17 @@ For the following steps, we assume that both Redis and Valkey Docker containers 
 For simplicity, we are running both instances without authentication.
 
 1. Connect to Redis and set the keys you wish to migrate over. Replace `myredis` with the name of your container.
-   For example, let's use the keys `message` and  `mydata`.
+   For example, using the keys `message` and  `mydata`:
 
-    ```
+    ```bash
     $ docker exec -it myredis redis-cli
     redis> SET message "Hello Valkey!"
     redis> HSET  mydata name Alice age 33 country Brazil "favorite food" beans
     (integer) 4
     ```
 
-2. Retrieve the IP address of your Valkey container
-    
+2. Retrieve the IP address of your Valkey container:
+
     {% raw %}
     ```
     $ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' myvalkey
@@ -198,7 +202,7 @@ For simplicity, we are running both instances without authentication.
 3. From the Redis server, run the `MIGRATE` command and specify the following information:
 
      * The IP address and post of the Valkey instance
-     * Authentication password. For no authentication, set the empty value 
+     * Authentication password. For no authentication, set the empty value
      * The database number. To get the number, run the `INFO keyspace` command
      * Timeout for the operation, in milliseconds
      * The `COPY` option ensures that the key is not removed from the source instance after the migration.
@@ -207,15 +211,15 @@ For simplicity, we are running both instances without authentication.
 
      For example, to migrate the `message` and `mydata` keys to the Valkey instance with the IP address 172.21.0.3, the command looks as follows:
 
-    ```
+    ```bash
     redis> MIGRATE 172.21.0.3 6379 "" 0 10 COPY REPLACE KEYS message mydata
     ```
 
-4. Exit `redis-cli` by pressing `Ctrl-D`
+4. Exit `redis-cli` by pressing `Ctrl-D`.
 
-4. Connect to Valkey and check the migrated keys. replace `myvalkey` with the name of your Valkey container.
+4. Connect to Valkey and check the migrated keys. replace `myvalkey` with the name of your Valkey container:
 
-    ```
+    ```bash
     $ docker exec -it myvalkey valkey-cli
     valkey> GET message
     "Hello Valkey"
