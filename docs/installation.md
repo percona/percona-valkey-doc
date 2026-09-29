@@ -1,14 +1,11 @@
 # Install Valkey from Percona repositories
 
-Valkey offers packages for a select number of Linux distributions. Specifically, you can install it from Fedora/EPEL yum repositories and as binary tarballs for both Ubuntu Bionic and Ubuntu Focal. Additionally, it is available as a Docker container.
+Percona provides Valkey packages for the following Linux distributions:
 
-To support Valkey’s development and adoption, Percona provides packages for all major active Linux distributions, making it easy for you to install Valkey on your system.
-
-The packages are available for both x86_64 and ARM64 architectures for the following operating systems:
-
-* Oracle Linux 8, Rocky Linux 8 and Alma Linux 8
-* Oracle Linux 9, Rocky Linux 9 and Alma Linux 9
-* Oracle Linux 10, Rocky Linux 10 and Alma Linux 10
+* Oracle Linux 8, Rocky Linux 8, and Alma Linux 8
+* Oracle Linux 9, Rocky Linux 9, and Alma Linux 9
+* Oracle Linux 10, Rocky Linux 10, and Alma Linux 10
+* Amazon Linux 2023
 * Ubuntu 22.04
 * Ubuntu 24.04
 * Ubuntu 26.04
@@ -16,16 +13,18 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
 * Debian 12
 * Debian 13
 
-## Preconditions
+The packages are available for x86_64 and ARM64 architectures.
 
-1. To install the software, you will need to subscribe to Percona repositories. To do this, use the [percona-release repository management tool](https://docs.percona.com/percona-software-repositories/index.html) that automatically enables the necessary repository. The software and all required dependencies are available in this repository, saving you from resolving dependency conflicts during the installation process.
+## Prerequisites
+
+1. To install Valkey, you need access to the Percona repositories. Use the [`percona-release`](https://docs.percona.com/percona-software-repositories/index.html) repository management tool to enable the required repository.
 2. Both Valkey and Redis use the same libraries that conflict with each other when you try to install Valkey on the same host with Redis. Therefore, either install Valkey on another host or remove Redis first before you install Valkey.
 
 ## Install Valkey
 
 === "Install on Debian / Ubuntu"
 
-    Run the following command as a root user or using the sudo privileges.
+    Run the following commands as a root user or with `sudo`.
 
     1. Install `percona-release`:
         
@@ -41,7 +40,7 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
            $ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
            ```    
 
-           After you install this package, you have the access to Percona repositories.    
+        After you install this package, you can access the Percona repositories. 
     
     2.  Enable the repository:    
 
@@ -55,39 +54,39 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
         $ sudo apt update
         ```
 
-    4. Install Valkey
+    4. Install Valkey:
      
         ```{.bash data-prompt="$"}
-        $ sudo apt install valkey
+        $ sudo apt install percona-valkey-server
         ```
 
 === "Install on Oracle Linux"
 
-    1. Install `percona-release`
+    1. Install `percona-release`:
 
         ```{.bash data-prompt="$"}
         $ sudo yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm
         ```
-    
-    2. Enable the repository
+
+    2. Enable the repository:
 
         ```{.bash data-prompt="$"}
         $ sudo percona-release enable valkey-91 release
         ```
-    
-    3. Install Valkey
+
+    3. Install Valkey:
 
         ```{.bash data-prompt="$"}
-        $ sudo yum install valkey
+        $ sudo yum install percona-valkey
         ```
-    
-    4. Upon installation, Valkey is not started automatically. To start it, run the following command:
+
+    4. Start the Valkey service:
 
         ```{.bash data-prompt="$"}
         $ sudo systemctl start valkey
         ```
-    
-    5. Check Valkey's status:
+
+    5. Check the Valkey service:
 
         ```{.bash data-prompt="$"}
         $ sudo systemctl status valkey
@@ -95,17 +94,22 @@ The packages are available for both x86_64 and ARM64 architectures for the follo
 
 ## Connect to Valkey
 
-With Valkey up and running, you can now connect to it using the `valkey-cli` interface. Check if Valkey is correctly running by passing the following command:
+Use `valkey-cli` to connect to the Valkey server.
 
-```{.bash data-prompt="$"}
+Check the connection:
+
+```bash
 $ valkey-cli ping
 PONG
 ```
 
-You can pass `valkey-cli` without any argument. You should see the following prompt: 
+Run `valkey-cli` without any argument to start interactive mode:
 
-```
-127.0.0.1:6379> 
+```bash 
+$ valkey-cli
+127.0.0.1:6379>
 ```
 
-This way you connect to Valkey in interactive mode.  
+For information about Valkey, see the [Valkey documentation website](https://valkey.io/topics/).
+
+For information about Valkey commands, see the [Valkey command reference](https://valkey.io/commands/).
