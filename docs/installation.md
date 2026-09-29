@@ -5,6 +5,7 @@ Percona provides Valkey packages for the following Linux distributions:
 * Oracle Linux 8, Rocky Linux 8, and Alma Linux 8
 * Oracle Linux 9, Rocky Linux 9, and Alma Linux 9
 * Oracle Linux 10, Rocky Linux 10, and Alma Linux 10
+* Amazon Linux 2023
 * Ubuntu 22.04
 * Ubuntu 24.04
 * Ubuntu 26.04
