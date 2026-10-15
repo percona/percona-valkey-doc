@@ -4,14 +4,14 @@ After installing and starting Valkey, verify that the server is running:
 
 1. Check connectivity:
 
-    ```bash
+    ```{.bash data-prompt="$"}
     valkey-cli ping
     PONG
     ```
 
 2. Start an interactive session:
 
-    ```bash
+    ```{.bash data-prompt="$"}
     valkey-cli
     ```
 
@@ -27,14 +27,14 @@ If Valkey is running in a Docker container:
 
 1. Run `valkey-cli` inside the container:
 
-    ```bash
-    docker exec -it <container-name> valkey-cli ping
+    ```{.bash data-prompt="$"}
+    docker exec --name valkey valkey-cli ping
     ```
 
 2. Start an interactive session:
 
-    ```bash
-    docker exec -it <container-name> valkey-cli
+    ```{.bash data-prompt="$"}
+    docker exec --name valkey valkey-cli
     ```
 
 Congratulations, you are now connected to your Valkey server!
