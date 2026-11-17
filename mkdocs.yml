@@ -1,6 +1,7 @@
 # MkDocs configuration for  builds with Material theme
 
 site_name: Percona Packages for Valkey
+site_url: https://docs.percona.com/valkey/
 site_description: Documentation
 site_author: Percona LLC
 copyright:  <a href="https://www.percona.com/about">Percona LLC</a> and/or its affiliates © 2025 — <a href="#__consent">Cookie Consent</a>
@@ -151,6 +152,15 @@ plugins:
 #      canonical_version: null#
 
 #Google Analytics configuration
+  # llms.txt, llms-full.txt and a .md copy of every page, for AI agents.
+  # percona-llmstxt fills in the sections (from nav), base_url and the rest.
+  llmstxt:
+    full_output: llms-full.txt
+    markdown_description: >-
+      Each page below is also available as markdown. For the documentation of
+      all Percona products, see https://docs.percona.com/llms.txt.
+    sections: {}
+  percona-llmstxt: {}
 extra:
   analytics:
     provider: google
