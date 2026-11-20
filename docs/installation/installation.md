@@ -15,21 +15,16 @@ Percona provides Valkey packages for the following Linux distributions:
 
 The packages are available for x86_64 and ARM64 architectures.
 
-Percona also provides Valkey as a Docker image for x86_64 and ARM64.
-
-## Prerequisites
-
-1. To install Valkey from packages, you need access to the Percona repositories. Use the [`percona-release`](https://docs.percona.com/percona-software-repositories/index.html) repository management tool to enable the required repository.
-2. Valkey and Redis use conflicting libraries. If Redis is already installed on the host, remove it before installing Valkey, or install Valkey on a separate host.
+Percona also provides Valkey Docker images for x86_64 and ARM64.
 
 ## Installation methods
 
 Choose the installation method that best fits your environment:
 
-* [Install from Percona repositories](install-package.md)
-* [Install using Docker](install-docker.md)
-* [Install from Package Repository](install-repo-pack.md)
+* [Install from Percona repositories](installation/install-package.md). Recommended for most Linux systems.
+* [Run in Docker](installation/install-docker.md). For evaluation, development, and containerized deployments.
+* [Install from upstream Valkey repositories](installation/install-repo-pack.md). Packages built and published by the Valkey project.
 
 ## Next steps
 
-[Connect to Valkey :material-arrow-right:](connect.md){ .md-button }
+[Connect to Valkey :material-arrow-right:](installation/connect.md){ .md-button }

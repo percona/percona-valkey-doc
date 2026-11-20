@@ -1,7 +1,15 @@
-# Install from Package Repository
+# Install from upstream Valkey repositories
 
-Install Valkey on your Linux distribution using official RPM and DEB packages.
+The Valkey project publishes its own RPM and DEB packages. These packages are built and maintained by the Valkey project, not by Percona.
 
-Select a Valkey version and your operating system from the [Package Repository website](https://valkey.io/valkey-release-automation/) to get installation instructions.
+To get installation instructions, select a Valkey version and your operating system on the [Valkey Package Repository :octicons-link-external-16:](https://valkey.io/valkey-release-automation/) page.
 
-All packages are signed with our GPG key. Download the public [GPG-KEY-valkey.asc](https://valkey.io/valkey-release-automation/GPG-KEY-valkey.asc) key to verify your packages.
+The Valkey project signs its packages with the [GPG-KEY-valkey.asc :octicons-link-external-16:](https://valkey.io/valkey-release-automation/GPG-KEY-valkey.asc) key. Use it to verify the packages.
+
+!!! note
+
+    For packages built, tested, and supported by Percona, see [Install from Percona repositories](install-package.md).
+
+## Next steps
+
+[Connect to Valkey :material-arrow-right:](connect.md){ .md-button }

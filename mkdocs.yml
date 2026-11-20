@@ -170,10 +170,10 @@ nav:
   - 'Home': 'index.md'
   - get-help.md
   - 'Install Valkey':
-    - 'Overview': 'installation/installation.md'
-    - 'Install from packages': 'installation/install-package.md'
-    - 'Install from Docker': 'installation/install-docker.md'
-    - 'Install from Valkey package repository': 'installation/install-repo-pack.md'
+    - 'Overview': 'installation.md'
+    - 'Install from Percona repositories': 'installation/install-package.md'
+    - 'Run in Docker': 'installation/install-docker.md'
+    - 'Install from upstream Valkey repositories': 'installation/install-repo-pack.md'
     - 'Connect to Valkey': 'installation/connect.md'
   - 'Migration guide':
     - "Migration from Redis to Valkey": migration-guide/migration.md

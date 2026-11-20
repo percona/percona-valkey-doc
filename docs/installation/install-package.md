@@ -1,46 +1,56 @@
-# Install from Percona Repositories
+# Install from Percona repositories
 
-To install Valkey from Percona Repositories, select your operating system:
+## Prerequisites
 
-=== "Install on Debian / Ubuntu"
+1. You need access to the Percona repositories. Use the [`percona-release`](https://docs.percona.com/percona-software-repositories/index.html) repository management tool to enable the required repository.
+2. Valkey and Redis use conflicting libraries. If Redis is already installed on the host, remove it before installing Valkey, or install Valkey on a separate host.
 
-    Run the following commands as a root user or with `sudo`.
+## Install Valkey
 
-    1. Install `percona-release`:
-        
-        a. Fetch `percona-release` packages from Percona web:
-        
-           ```{.bash data-prompt="$"}
-           $ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
-           ```    
+Run the following commands as a root user or with `sudo`. Select your operating system:
 
-        b. Install the downloaded package with `dpkg`:    
+=== "Debian / Ubuntu"
 
-           ```{.bash data-prompt="$"}
-           $ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
-           ```    
+    1. Install the tools required to fetch and install `percona-release`:
 
-        After you install this package, you can access the Percona repositories. 
-    
-    2.  Enable the repository:    
+        ```{.bash data-prompt="$"}
+        $ sudo apt update
+        $ sudo apt install -y wget gnupg2 lsb-release
+        ```
 
-         ```{.bash data-prompt="$"}
-         $ sudo percona-release enable valkey-91 release
-         ```    
+    2. Fetch the `percona-release` package:
 
-    3. Remember to update the local cache:    
+        ```{.bash data-prompt="$"}
+        $ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+        ```
+
+    3. Install the downloaded package with `dpkg`:
+
+        ```{.bash data-prompt="$"}
+        $ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+        ```
+
+    4. Enable the repository:
+
+        ```{.bash data-prompt="$"}
+        $ sudo percona-release enable valkey-91 release
+        ```
+
+    5. Update the local cache:
 
         ```{.bash data-prompt="$"}
         $ sudo apt update
         ```
 
-    4. Install Valkey:
-     
+    6. Install Valkey:
+
         ```{.bash data-prompt="$"}
         $ sudo apt install percona-valkey-server
         ```
 
-=== "Install on Oracle Linux"
+=== "RHEL-based distributions"
+
+    Use these steps on Oracle Linux, Rocky Linux, Alma Linux, and Amazon Linux 2023.
 
     1. Install `percona-release`:
 

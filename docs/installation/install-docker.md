@@ -1,18 +1,37 @@
-# Install from Docker
+# Run in Docker
 
-Run Valkey in a Docker container using the [Percona Valkey image](https://hub.docker.com/r/percona/valkey). The image is available for x86_64 and ARM64 architectures.
+Run Valkey in a Docker container using the [Percona Valkey images](https://hub.docker.com/r/percona/valkey) on Docker Hub.
 
-1. Pull the latest Valkey image:
+## Available images
 
-    ```{.bash data-prompt="$"}
-    $ docker pull percona/valkey:latest
-    ```
+Both images are available for x86_64 and ARM64 architectures.
 
-    To pull a specific release, replace `latest` with the version tag, for example:
+| Image | Example tags | Description |
+|-------|--------------|-------------|
+| Standard | `latest`, `9`, `9.1`, `9.1.2` | Built on Red Hat Universal Base Image 9 Minimal. |
+| Hardened | `9-hardened`, `9.1-hardened`, `9.1.2-hardened` | Minimal image built on a hardened Debian base, with a reduced attack surface. |
 
-    ```{.bash data-prompt="$"}
-    $ docker pull percona/valkey:9.1
-    ```
+Both images expose port `6379`, store data in `/data`, and run as the non-root `valkey` user.
+
+## Start a container
+
+1. Pull the Valkey image:
+
+    === "Standard image"
+
+        ```{.bash data-prompt="$"}
+        $ docker pull percona/valkey:latest
+        ```
+
+        To pull a specific release, replace `latest` with the version tag, for example, `9.1`.
+
+    === "Hardened image"
+
+        ```{.bash data-prompt="$"}
+        $ docker pull percona/valkey:9.1-hardened
+        ```
+
+        There is no `latest` tag for the hardened image. In the following steps, replace `percona/valkey:latest` with `percona/valkey:9.1-hardened`.
 
 2. Start a Valkey container and expose the default port:
 
