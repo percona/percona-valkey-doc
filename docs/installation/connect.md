@@ -1,44 +1,54 @@
 # Connect to Valkey
 
-After installing and starting Valkey, verify that the server is running:
+Use `valkey-cli` to connect to the Valkey server.
 
-1. Check connectivity:
-
-    ```{.bash data-prompt="$"}
-    valkey-cli ping
-    PONG
-    ```
-
-    ```bash {.no-copy}
-    PONG
-    ```
-
-2. Start an interactive session:
+1. Check the connection:
 
     ```{.bash data-prompt="$"}
-    valkey-cli
+    $ valkey-cli ping
     ```
 
-You can pass `valkey-cli` without any argument. You should see the following prompt:
+    ??? example "Expected output"
 
-```bash {.no-copy}
-127.0.0.1:6379> 
-```
+        ```text
+        PONG
+        ```
+
+2. Run `valkey-cli` without any argument to start interactive mode:
+
+    ```{.bash data-prompt="$"}
+    $ valkey-cli
+    ```
+
+    ??? example "Expected output"
+
+        ```text
+        127.0.0.1:6379>
+        ```
 
 ## Docker
 
-If Valkey is running in a Docker container:
+If Valkey runs in a Docker container, run `valkey-cli` inside the container:
 
-1. Run `valkey-cli` inside the container:
-
-    ```{.bash data-prompt="$"}
-    docker exec valkey valkey-cli ping
-    ```
-  
-2. Start an interactive session:
+1. Check the connection:
 
     ```{.bash data-prompt="$"}
-    docker exec -it valkey valkey-cli
+    $ docker exec valkey valkey-cli ping
     ```
 
-Congratulations, you are now connected to your Valkey server!
+    ??? example "Expected output"
+
+        ```text
+        PONG
+        ```
+
+2. Start interactive mode:
+
+    ```{.bash data-prompt="$"}
+    $ docker exec -it valkey valkey-cli
+    ```
+
+## Useful links
+
+* [Valkey documentation](https://valkey.io/topics/)
+* [Valkey command reference](https://valkey.io/commands/)

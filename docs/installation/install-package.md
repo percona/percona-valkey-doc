@@ -4,7 +4,7 @@ To install Valkey from Percona Repositories, select your operating system:
 
 === "Install on Debian / Ubuntu"
 
-    Run the following command as a root user or using the sudo privileges.
+    Run the following commands as a root user or with `sudo`.
 
     1. Install `percona-release`:
         
@@ -20,7 +20,7 @@ To install Valkey from Percona Repositories, select your operating system:
            $ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
            ```    
 
-           After you install this package, you have the access to Percona repositories.    
+        After you install this package, you can access the Percona repositories. 
     
     2.  Enable the repository:    
 
@@ -34,39 +34,39 @@ To install Valkey from Percona Repositories, select your operating system:
         $ sudo apt update
         ```
 
-    4. Install Valkey
+    4. Install Valkey:
      
         ```{.bash data-prompt="$"}
-        $ sudo apt install valkey
+        $ sudo apt install percona-valkey-server
         ```
 
 === "Install on Oracle Linux"
 
-    1. Install `percona-release`
+    1. Install `percona-release`:
 
         ```{.bash data-prompt="$"}
         $ sudo yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm
         ```
-    
-    2. Enable the repository
+
+    2. Enable the repository:
 
         ```{.bash data-prompt="$"}
         $ sudo percona-release enable valkey-91 release
         ```
-    
-    3. Install Valkey
+
+    3. Install Valkey:
 
         ```{.bash data-prompt="$"}
-        $ sudo yum install valkey
+        $ sudo yum install percona-valkey
         ```
-    
-    4. Upon installation, Valkey is not started automatically. To start it, run the following command:
+
+    4. Start the Valkey service:
 
         ```{.bash data-prompt="$"}
         $ sudo systemctl start valkey
         ```
-    
-    5. Check Valkey's status:
+
+    5. Check the Valkey service:
 
         ```{.bash data-prompt="$"}
         $ sudo systemctl status valkey
