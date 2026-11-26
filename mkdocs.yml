@@ -2,7 +2,7 @@
 
 site_name: Percona Packages for Valkey
 site_url: https://docs.percona.com/valkey/
-site_description: Documentation
+site_description: "Percona Packages for Valkey, covering how to install Valkey from Percona packages and how to migrate from a Redis server to Valkey"
 site_author: Percona LLC
 copyright:  <a href="https://www.percona.com/about">Percona LLC</a> and/or its affiliates © 2025 — <a href="#__consent">Cookie Consent</a>
 
