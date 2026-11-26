@@ -7,6 +7,8 @@
 
 ## Install Valkey
 
+The following steps install Valkey {{ valkey_version }} from the `{{ valkey_repo }}` repository. Each Valkey major and minor version has its own repository, named `valkey-<major><minor>`. To install a different version, replace `{{ valkey_repo }}` with the matching repository name, for example, `valkey-91` for Valkey 9.1.
+
 Run the following commands as a root user or with `sudo`. Select your operating system:
 
 === "Debian / Ubuntu"
@@ -33,7 +35,7 @@ Run the following commands as a root user or with `sudo`. Select your operating 
     4. Enable the repository:
 
         ```{.bash data-prompt="$"}
-        $ sudo percona-release enable valkey-91 release
+        $ sudo percona-release enable {{ valkey_repo }} release
         ```
 
     5. Update the local cache:
@@ -61,7 +63,7 @@ Run the following commands as a root user or with `sudo`. Select your operating 
     2. Enable the repository:
 
         ```{.bash data-prompt="$"}
-        $ sudo percona-release enable valkey-91 release
+        $ sudo percona-release enable {{ valkey_repo }} release
         ```
 
     3. Install Valkey:

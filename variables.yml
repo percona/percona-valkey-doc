@@ -1,0 +1,6 @@
+# Version variables used across the docs. Use in Markdown as '{{ variable }}'.
+# When a new Valkey version is released, update the values here only.
+
+valkey_major: "9"
+valkey_version: "9.2"   # <major>.<minor>
+valkey_repo: "valkey-92" # percona-release repository name: valkey-<major><minor>
