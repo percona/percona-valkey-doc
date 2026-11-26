@@ -50,6 +50,14 @@ Run the following commands as a root user or with `sudo`. Select your operating 
         $ sudo apt install percona-valkey-server
         ```
 
+        The installation enables and starts the `valkey-server` service.
+
+    7. Check the Valkey service:
+
+        ```{.bash data-prompt="$"}
+        $ sudo systemctl status valkey-server
+        ```
+
 === "RHEL-based distributions"
 
     Use these steps on Oracle Linux, Rocky Linux, Alma Linux, and Amazon Linux 2023.
@@ -72,10 +80,10 @@ Run the following commands as a root user or with `sudo`. Select your operating 
         $ sudo yum install percona-valkey
         ```
 
-    4. Start the Valkey service:
+    4. Start the Valkey service and enable it to start at boot:
 
         ```{.bash data-prompt="$"}
-        $ sudo systemctl start valkey@default
+        $ sudo systemctl enable --now valkey@default
         ```
 
     5. Check the Valkey service:
