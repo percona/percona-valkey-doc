@@ -75,13 +75,13 @@ Run the following commands as a root user or with `sudo`. Select your operating 
     4. Start the Valkey service:
 
         ```{.bash data-prompt="$"}
-        $ sudo systemctl start valkey
+        $ sudo systemctl start valkey@default
         ```
 
     5. Check the Valkey service:
 
         ```{.bash data-prompt="$"}
-        $ sudo systemctl status valkey
+        $ sudo systemctl status valkey@default
         ```
 
 ## Next steps
